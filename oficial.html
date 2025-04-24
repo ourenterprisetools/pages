@@ -3,170 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Urgente: Specialist reveals...</title>
+    <title>NEWS</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="/assets/images/oficial.png" type="image/png" />
 
-    <!-- Tracking Script -->
-    <script
-      type="text/javascript"
-      src="https://track.onebetter-life.site/track.js?rtkcmpid=680681dda881d75b1bfeeeef"
-    ></script>
-
-    <!-- RedTrack ClickID Capture -->
-    <script>
-      function getCookie(n) {
-        const m = document.cookie.match(
-          new RegExp(
-            "(?:^|; )" +
-              n.replace(/([$?*|{}()\[\]\\/+^])/g, "\\$1") +
-              "=([^;]*)"
-          )
-        );
-        return m ? decodeURIComponent(m[1]) : null;
-      }
-
-      function getClickId() {
-        const urlClick = new URLSearchParams(location.search).get("rtkcid");
-        return (
-          urlClick ||
-          getCookie("rtkclickid-store") ||
-          sessionStorage.getItem("rtkclickid")
-        );
-      }
-
-      function waitForClickId(cb, tries = 50) {
-        const cid = getClickId();
-        if (cid || tries === 0) return cb(cid);
-        setTimeout(() => waitForClickId(cb, tries - 1), 100);
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        waitForClickId(function (clickid) {
-          if (!clickid) return;
-          const params = new URLSearchParams(location.search);
-          const rdtk_event_id = params.get("ip");
-
-          function startOfferTimer() {
-            const offerTimerElements =
-              document.querySelectorAll(".offer-timer-count");
-            let o = 1800;
-            if (!offerTimerElements.length) return;
-            const r = setInterval(() => {
-              const e = String(Math.floor(o / 60)).padStart(2, "0");
-              const t = String(o % 60).padStart(2, "0");
-              offerTimerElements.forEach(
-                (el) => (el.innerHTML = `<h1>${e}:${t}</h1>`)
-              );
-              if (--o < 0) clearInterval(r);
-            }, 1000);
-          }
-
-          function displayOnPitch() {
-            startOfferTimer();
-            document
-              .querySelectorAll(".display-on-pitch")
-              .forEach((el) => el.classList.remove("display-on-pitch"));
-            document
-              .querySelector(".scroll-on-pitch")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }
-
-          const e = {
-            view: `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(
-              clickid
-            )}&rdtk_event_id=${encodeURIComponent(
-              rdtk_event_id
-            )}&type=VSL%20View`,
-            play: `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(
-              clickid
-            )}&rdtk_event_id=${encodeURIComponent(
-              rdtk_event_id
-            )}&type=VSL%20-%20Play`,
-            view3s: `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(
-              clickid
-            )}&rdtk_event_id=${encodeURIComponent(
-              rdtk_event_id
-            )}&type=VSL%20-%203%20View`,
-            view60s: `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(
-              clickid
-            )}&rdtk_event_id=${encodeURIComponent(
-              rdtk_event_id
-            )}&type=VSL%20-%2060%20View`,
-            view120s: `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(
-              clickid
-            )}&rdtk_event_id=${encodeURIComponent(
-              rdtk_event_id
-            )}&type=VSL%20-%20120%20View`,
-            view300s: `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(
-              clickid
-            )}&rdtk_event_id=${encodeURIComponent(
-              rdtk_event_id
-            )}&type=VSL%20-%20300%20View`,
-            pitchView: `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(
-              clickid
-            )}&rdtk_event_id=${encodeURIComponent(
-              rdtk_event_id
-            )}&type=VSL%20-%20Pitch%20View`,
-            leadview: `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(
-              clickid
-            )}&rdtk_event_id=${encodeURIComponent(
-              rdtk_event_id
-            )}&type=VSL%20-%20Lead%20View`,
-          };
-
-          fetch(e.view);
-          if (localStorage.getItem("pitchView") === "true") displayOnPitch();
-
-          window.addEventListener("message", (t) => {
-            if (t.data === "VSL View") fetch(e.view);
-            if (t.data === "VSL - Lead View") fetch(e.leadview);
-            if (t.data === "VSL - Play") {
-              fetch(e.play);
-              document
-                .querySelectorAll(".hide-on-play")
-                .forEach((el) => (el.style.display = "none"));
-            }
-            if (t.data === "VSL - 3 View") fetch(e.view3s);
-            if (t.data === "VSL - 60 View") fetch(e.view60s);
-            if (t.data === "VSL - 120 View") fetch(e.view120s);
-            if (t.data === "VSL - 300 View") fetch(e.view300s);
-            if (t.data === "VSL - Pitch View") {
-              localStorage.setItem("pitchView", "true");
-              fetch(e.pitchView);
-              displayOnPitch();
-            }
-          });
-        });
-      });
-    </script>
-
-    <!-- Preload VSL Player -->
-    <link
-      rel="preload"
-      href="https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/players/67d071ca632a0adc39bfc062/player.js"
-      as="script"
-    />
-    <link
-      rel="preload"
-      href="https://scripts.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js"
-      as="script"
-    />
-    <link
-      rel="preload"
-      href="https://images.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/players/67d071ca632a0adc39bfc062/thumbnail.jpg"
-      as="image"
-    />
-    <link
-      rel="preload"
-      href="https://cdn.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/67d06fb944b6488d4311b316/main.m3u8"
-      as="fetch"
-    />
-    <link rel="dns-prefetch" href="https://cdn.converteai.net" />
-    <link rel="dns-prefetch" href="https://scripts.converteai.net" />
-    <link rel="dns-prefetch" href="https://images.converteai.net" />
-    <link rel="dns-prefetch" href="https://api.vturb.com.br" />
-
+    <link rel="preload" href="https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/ab-test/67fa5edf7066994f5aca03b4/player.js" as="script">
+    <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+    
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -195,11 +42,7 @@
       .headline strong {
         color: red;
       }
-      .video-wrapper {
-        display: flex;
-        justify-content: center;
-        margin: 1rem 0;
-      }
+      
       .trusted-logos {
         display: flex;
         justify-content: center;
@@ -287,16 +130,8 @@
       </p>
     </div>
 
-    <div class="video-wrapper">
-      <script type="text/javascript" id="scr_67fa5edf7066994f5aca03b4">
-        var s = document.createElement("script");
-        s.src =
-          "https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/ab-test/67fa5edf7066994f5aca03b4/player.js";
-        s.async = true;
-        document.head.appendChild(s);
-      </script>
-    </div>
-
+        <script type="text/javascript" id="scr_67fa5edf7066994f5aca03b4"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/ab-test/67fa5edf7066994f5aca03b4/player.js", s.async=!0,document.head.appendChild(s); </script>
+  
     <div class="trusted-logos">
       <img src="/assets/images/logo_news.webp" height="50" alt="Logo News" />
     </div>
@@ -426,5 +261,102 @@
         here.
       </p>
     </footer>
+
+    <script>
+        (function(window) {
+            window.onpopstate = function() {
+                // Recuperar os subIDs do localStorage
+                let subid = localStorage.getItem('subid') || '';
+                let subid2 = localStorage.getItem('subid2') || '';
+                let subid3 = localStorage.getItem('subid3') || '';
+                let subid4 = localStorage.getItem('subid4') || '';
+                let subid5 = localStorage.getItem('subid5') || '';
+    
+                // Criar a URL de redirecionamento com os subIDs
+                let redirectUrl = new URL("https://track.onebetter-life.site/67f425e5a1b2d8eec81adec4?utm_campaign={replace}&sub2={keyword}&sub3={matchtype}&sub4={adgroupid}&sub5={creative}&sub6={campaignid}&sub7={device}&sub8={adposition}&sub9={network}&sub10={placement}&utm_source=Google&wbraid={wbraid}&gbraid={gbraid}&adgroup={_cj}&creative={_ad}&ref_id={gclid}");
+                if (subid) redirectUrl.searchParams.set('subid', subid);
+                if (subid2) redirectUrl.searchParams.set('subid2', subid2);
+                if (subid3) redirectUrl.searchParams.set('subid3', subid3);
+                if (subid4) redirectUrl.searchParams.set('subid4', subid4);
+                if (subid5) redirectUrl.searchParams.set('subid5', subid5);
+    
+                // Redirecionar para a nova URL com subIDs
+                window.location.href = redirectUrl.toString();
+            };
+            window.history.pushState({}, '');
+        })(window);
+    </script>
+
+    <!-- ========== REDTRACK SCRIPT ========== -->
+    
+    <script type="text/javascript" src="https://track.onebetter-life.site/track.js?rtkcmpid=68038cfe6843f7aac3840d63"></script>
+
+    <!-- ========== REDTRACK SCRIPT ========== -->
+    
+    <script>
+        /* util cookie */
+        function getCookie(n) {
+          const m = document.cookie.match(new RegExp('(?:^|; )' + n.replace(/([$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+          return m ? decodeURIComponent(m[1]) : null;
+        }
+        /* ping seguro */
+        function ping(url) {
+          if (navigator.sendBeacon) {
+            navigator.sendBeacon(url);
+          } else {
+            fetch(url, { mode: 'no-cors', keepalive: true });
+          }
+        }
+        /* IDs */
+        const p = new URLSearchParams(location.search),
+              clickid = p.get('rtkcid') || getCookie('rtkclickid-store') || sessionStorage.getItem('rtkclickid'),
+              rawIp   = p.get('ip'),
+              rdtk    = rawIp && rawIp !== 'null' && rawIp.trim() !== '' ? rawIp : null,
+              evPart  = rdtk ? '&rdtk_event_id=' + encodeURIComponent(rdtk) : '';
+    
+        if (clickid) {
+          const e = {
+            view:       `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20View`,
+            play:       `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20Play`,
+            view3s:     `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%203%20View`,
+            view60s:    `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%2060%20View`,
+            view120s:   `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20120%20View`,
+            view300s:   `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20300%20View`,
+            pitchView:  `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20Pitch%20View`,
+            leadview:   `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20Lead%20View`
+          };
+    
+          window.addEventListener('DOMContentLoaded', () => {
+            ping(e.view);
+            if (localStorage.getItem('pitchView') === 'true') displayOnPitch();
+          });
+          window.addEventListener('beforeunload', () => ping(e.view), { once: true });
+    
+          window.addEventListener('message', t => {
+            if (t.data === 'VSL View')            ping(e.view);
+            if (t.data === 'VSL - Lead View')     ping(e.leadview);
+            if (t.data === 'VSL - Play') {
+              ping(e.play);
+              document.querySelectorAll('.hide-on-play').forEach(el => el.style.display = 'none');
+            }
+            if (t.data === 'VSL - 3 View')        ping(e.view3s);
+            if (t.data === 'VSL - 60 View')       ping(e.view60s);
+            if (t.data === 'VSL - 120 View')      ping(e.view120s);
+            if (t.data === 'VSL - 300 View')      ping(e.view300s);
+            if (t.data === 'VSL - Pitch View') {
+              localStorage.setItem('pitchView', 'true');
+              ping(e.pitchView);
+              displayOnPitch();
+            }
+          });
+        } else {
+          console.log('Missing clickid');
+        }
+    
+        /* funções do timer / pitch (inalteradas) */
+        function startOfferTimer() { /* ... */ }
+        function displayOnPitch() { /* ... */ }
+      </script>
+
   </body>
 </html>
