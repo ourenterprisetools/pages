@@ -7,6 +7,8 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="/assets/images/oficial.png" type="image/png" />
 
+    
+
     <link rel="preload" href="https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/ab-test/67fa5edf7066994f5aca03b4/player.js" as="script">
     <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
     <link rel="dns-prefetch" href="https://cdn.converteai.net">
@@ -122,16 +124,103 @@
       </h1>
       <p style="font-size: 15px; justify-content: left; align-items: start">
         <div style="text-align: center; margin-top: 1rem;">
-            <strong>By Doctor Brian </strong><br />
+            <strong>By Doctor Yumi </strong><br />
             Publication date: <script>
               document.write(new Date(Date.now() - 86400000).toLocaleDateString("en-US"));
-            </script></script>
+            </script>
         </div>
       </p>
     </div>
 
-        <script type="text/javascript" id="scr_67fa5edf7066994f5aca03b4"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/ab-test/67fa5edf7066994f5aca03b4/player.js", s.async=!0,document.head.appendChild(s); </script>
-  
+<script type="text/javascript" id="scr_68200d9065dc0f433d443f33"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/ab-test/68200d9065dc0f433d443f33/player.js", s.async=!0,document.head.appendChild(s); </script>
+    
+    <!-- ▸ ELEMENTO DO ESTOQUE -->
+<div id="stock-counter"
+     style="display:none; font-family:Arial,sans-serif;
+            font-weight:bold; text-align:center; margin:.8rem 0 1.3rem;
+            font-size:1.1rem;">
+</div>
+
+<!-- ▸ SCRIPT -->
+<script>
+(function () {
+  const INITIAL = 152;              // início
+  const FINAL   = 15;               // destino
+  const REST_MS = 600_000;          // 10 min = 600 000 ms
+  const TICK_MS = 5_000;            // atualiza a cada 5 s
+  const OPTIONS = [6, 3, 1];        // tamanhos de queda
+
+  const K_LEFT     = 'stockLeft';
+  const K_RUNNING  = 'stockCounterRunning';
+  const K_DEADLINE = 'stockCounterDeadline';
+
+  /* util */
+  const $ = id => document.getElementById(id);
+
+  /* calcula estoque atual */
+  function getStock () {
+    const n = parseInt(localStorage.getItem(K_LEFT), 10);
+    return isNaN(n) ? INITIAL : n;
+  }
+
+  /* renderiza */
+  function render (n) {
+    const el = $('stock-counter');
+    if (!el) return;
+    el.style.display = 'block';
+    el.innerHTML =
+      `<span style="color:#b20000;">${n}</span> bottles available…`;
+  }
+
+  /* função global chamada após o pitch */
+  window.startStockCounter = function () {
+    if (localStorage.getItem(K_RUNNING)) return;        // já iniciou
+
+    let stock = getStock();
+    /* define deadline de término se não existir */
+    let deadline = parseInt(localStorage.getItem(K_DEADLINE), 10);
+    if (isNaN(deadline)) {
+      deadline = Date.now() + REST_MS;
+      localStorage.setItem(K_DEADLINE, deadline);
+    }
+
+    render(stock);
+
+    const int = setInterval(() => {
+      const now = Date.now();
+      const remainingTicks = Math.max(1, Math.ceil((deadline - now) / TICK_MS));
+      const dropsLeft      = stock - FINAL;
+
+      /* se já chegou ou passou do final, encerra */
+      if (dropsLeft <= 0 || remainingTicks <= 0) {
+        clearInterval(int);
+        stock = FINAL;
+        render(stock);
+        return;
+      }
+
+      /* escolhe passo permitido que não “fure” o mínimo */
+      const maxCanDrop = dropsLeft - (remainingTicks - 1) * 1; // preciso deixar ≥1 p/ cada tick restante
+      const choices = OPTIONS.filter(v => v <= maxCanDrop);
+      const step    = choices[Math.floor(Math.random() * choices.length)];
+
+      stock -= step;
+      localStorage.setItem(K_LEFT, stock);
+      render(stock);
+    }, TICK_MS);
+
+    localStorage.setItem(K_RUNNING, '1');
+  };
+
+  /* se já viu o pitch em visita anterior, ativa imediatamente */
+  if (localStorage.getItem('pitchView') === 'true') {
+    startStockCounter();
+  }
+})();
+</script>
+
+
+
     <div class="trusted-logos">
       <img src="/assets/images/logo_news.webp" height="50" alt="Logo News" />
     </div>
@@ -263,100 +352,218 @@
     </footer>
 
     <script>
-        (function(window) {
-            window.onpopstate = function() {
-                // Recuperar os subIDs do localStorage
-                let subid = localStorage.getItem('subid') || '';
-                let subid2 = localStorage.getItem('subid2') || '';
-                let subid3 = localStorage.getItem('subid3') || '';
-                let subid4 = localStorage.getItem('subid4') || '';
-                let subid5 = localStorage.getItem('subid5') || '';
-    
-                // Criar a URL de redirecionamento com os subIDs
-                let redirectUrl = new URL("https://track.onebetter-life.site/67f425e5a1b2d8eec81adec4?utm_campaign={replace}&sub2={keyword}&sub3={matchtype}&sub4={adgroupid}&sub5={creative}&sub6={campaignid}&sub7={device}&sub8={adposition}&sub9={network}&sub10={placement}&utm_source=Google&wbraid={wbraid}&gbraid={gbraid}&adgroup={_cj}&creative={_ad}&ref_id={gclid}");
-                if (subid) redirectUrl.searchParams.set('subid', subid);
-                if (subid2) redirectUrl.searchParams.set('subid2', subid2);
-                if (subid3) redirectUrl.searchParams.set('subid3', subid3);
-                if (subid4) redirectUrl.searchParams.set('subid4', subid4);
-                if (subid5) redirectUrl.searchParams.set('subid5', subid5);
-    
-                // Redirecionar para a nova URL com subIDs
-                window.location.href = redirectUrl.toString();
-            };
-            window.history.pushState({}, '');
-        })(window);
-    </script>
+(function (window) {
+
+  /* util para ler cookies */
+  function getCookie(name) {
+    const m = ('; ' + document.cookie).match('; ' + name + '=([^;]*)');
+    return m ? m[1] : null;
+  }
+
+  /* salva o ID da campanha de origem logo que a lander carrega */
+  window.addEventListener('DOMContentLoaded', () => {
+    const cmpId = getCookie('rtkcmpid-store');      // gerado pelo universal‑script
+    if (cmpId) localStorage.setItem('sourceCmp', cmpId);
+  });
+
+  /* back‑redirect simplificado */
+  window.onpopstate = function () {
+    if (sessionStorage.getItem('backRedirectDone')) return;
+    sessionStorage.setItem('backRedirectDone', '1');
+
+    /* URL do DTC (campanha separada) */
+    const redirectUrl = new URL(
+      'https://track.onebetter-life.site/67f425e5a1b2d8eec81adec4' +
+      '?utm_campaign={replace}&utm_source=Google'
+    );
+
+    /* inclui o clickid do visitante */
+    const clickId = getCookie('rtkclickid-store');
+    if (clickId) redirectUrl.searchParams.set('clickid', clickId);
+
+    /* (Opcional) inclui ID da campanha de origem para referência */
+    const srcCmp = localStorage.getItem('sourceCmp');
+    if (srcCmp) redirectUrl.searchParams.set('src_cmp', srcCmp);
+
+    /* redireciona */
+    window.location.href = redirectUrl.toString();
+  };
+
+  /* cria um estado no histórico para que o “voltar” dispare popstate */
+  window.history.pushState({}, '', window.location.href);
+
+})(window);
+</script>
+
 
     <!-- ========== REDTRACK SCRIPT ========== -->
     
-    <script type="text/javascript" src="https://track.onebetter-life.site/track.js?rtkcmpid=68038cfe6843f7aac3840d63"></script>
-
+    <script src="https://track.onebetter-life.site/unilpclick.js?attribution=lastpaid&cookiedomain=a-goodlife.site&cookieduration=90&defaultcampaignid=680d8315562306975d39b98e&regviewonce=false"></script>
+    
+    
     <!-- ========== REDTRACK SCRIPT ========== -->
     
+   <!-- ====== TRACKING – RedTrack (cookie)  x  ConverteAI ====== -->
+<script>
+(function () {
+  /* ─── Utilidades ────────────────────────────────────────── */
+  function getCookie(name) {
+    const m = ('; ' + document.cookie).match('; ' + name + '=([^;]*)');
+    return m ? m[1] : null;
+  }
+  const newEventId = () => Date.now().toString();
+
+  /* ─── Dispara o postback ───────────────────────────────── */
+  function track(type) {
+    const clickId = getCookie('rtkclickid-store');
+    if (!clickId) {
+      console.warn(`RedTrack: cookie ausente – evento “${type}” NÃO enviado.`);
+      return;
+    }
+
+    /* ★ Envia “VSL View” só 1x por clickID ----------------- */
+    if (type === 'VSL View') {
+      const key = 'vslView:' + clickId;
+      if (localStorage.getItem(key)) {
+        console.log('RedTrack: “VSL View” já enviado para esse clickid.');
+        return;
+      }
+      localStorage.setItem(key, '1');   // marca que já enviou
+    }
+    /* ------------------------------------------------------ */
+
+    const url =
+      'https://track.thenew-health.online/postback' +
+      '?clickid='       + encodeURIComponent(clickId) +
+      '&rdtk_event_id=' + encodeURIComponent(newEventId()) +
+      '&type='          + encodeURIComponent(type);
+
+    new Image().src = url;
+    console.log('RedTrack: enviado →', type);
+  }
+
+  /* ─── Timer + UI do Pitch (inalterado) ─────────────────── */
+  function startOfferTimer() {
+    const els = document.querySelectorAll('.offer-timer-count');
+    if (!els.length) return;
+
+    let s = 1800;
+    const int = setInterval(() => {
+      const mm = String(Math.floor(s / 60)).padStart(2, '0');
+      const ss = String(s % 60).padStart(2, '0');
+
+      els.forEach(el => (el.innerHTML = `<h1>${mm}:${ss}</h1>`));
+      document.querySelectorAll('.offer-timer-count h1')
+        .forEach(h1 => (h1.textContent = `Oferta expira em ${mm}:${ss}`));
+
+      if (--s < 0) clearInterval(int);
+    }, 1000);
+  }
+
+  function displayOnPitch() {
+    startOfferTimer();
+    document.querySelectorAll('.display-on-pitch')
+            .forEach(el => el.classList.remove('display-on-pitch'));
+    document.querySelector('.scroll-on-pitch')
+            ?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* ─── VSL View: polling até 5 s pelo cookie ────────────── */
+  window.addEventListener('DOMContentLoaded', () => {
+    let tries = 0;
+    const int = setInterval(() => {
+      if (getCookie('rtkclickid-store')) {
+        track('VSL View');
+        clearInterval(int);
+      } else if (++tries >= 17) {
+        clearInterval(int);
+        console.warn('VSL View não disparado: cookie não apareceu em 5 s.');
+      }
+    }, 300);
+
+    if (localStorage.getItem('pitchView') === 'true') {
+      displayOnPitch();
+    }
+  });
+
+  /* ─── Mensagens do SmartPlayer ─────────────────────────── */
+  window.addEventListener('message', ev => {
+    switch (ev.data) {
+      /* REMOVIDO: 'VSL View' duplicado */
+
+      case 'VSL - Lead View' : track('VSL - Lead View');         break;
+
+      case 'VSL - Play':
+        track('VSL - Play');
+        document.querySelectorAll('.hide-on-play')
+                .forEach(el => (el.style.display = 'none'));
+        break;
+
+      case 'VSL - 3 View'    : track('VSL - 3 View');            break;
+      case 'VSL - 60 View'   : track('VSL - 60 View');           break;
+      case 'VSL - 120 View'  : track('VSL - 120 View');          break;
+      case 'VSL - 300 View'  : track('VSL - 300 View');          break;
+
+      case 'VSL - Pitch View':
+  localStorage.setItem('pitchView', 'true');
+  track('VSL - Pitch View');
+  displayOnPitch();
+  startStockCounter();          // ← ativa o contador
+  break;
+
+    }
+  });
+})();
+</script>
+<!-- ====== /TRACKING ======================================================= -->
+
     <script>
-        /* util cookie */
-        function getCookie(n) {
-          const m = document.cookie.match(new RegExp('(?:^|; )' + n.replace(/([$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
-          return m ? decodeURIComponent(m[1]) : null;
-        }
-        /* ping seguro */
-        function ping(url) {
-          if (navigator.sendBeacon) {
-            navigator.sendBeacon(url);
-          } else {
-            fetch(url, { mode: 'no-cors', keepalive: true });
-          }
-        }
-        /* IDs */
-        const p = new URLSearchParams(location.search),
-              clickid = p.get('rtkcid') || getCookie('rtkclickid-store') || sessionStorage.getItem('rtkclickid'),
-              rawIp   = p.get('ip'),
-              rdtk    = rawIp && rawIp !== 'null' && rawIp.trim() !== '' ? rawIp : null,
-              evPart  = rdtk ? '&rdtk_event_id=' + encodeURIComponent(rdtk) : '';
-    
-        if (clickid) {
-          const e = {
-            view:       `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20View`,
-            play:       `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20Play`,
-            view3s:     `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%203%20View`,
-            view60s:    `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%2060%20View`,
-            view120s:   `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20120%20View`,
-            view300s:   `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20300%20View`,
-            pitchView:  `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20Pitch%20View`,
-            leadview:   `https://track.thenew-health.online/postback?clickid=${encodeURIComponent(clickid)}${evPart}&type=VSL%20-%20Lead%20View`
-          };
-    
-          window.addEventListener('DOMContentLoaded', () => {
-            ping(e.view);
-            if (localStorage.getItem('pitchView') === 'true') displayOnPitch();
-          });
-          window.addEventListener('beforeunload', () => ping(e.view), { once: true });
-    
-          window.addEventListener('message', t => {
-            if (t.data === 'VSL View')            ping(e.view);
-            if (t.data === 'VSL - Lead View')     ping(e.leadview);
-            if (t.data === 'VSL - Play') {
-              ping(e.play);
-              document.querySelectorAll('.hide-on-play').forEach(el => el.style.display = 'none');
-            }
-            if (t.data === 'VSL - 3 View')        ping(e.view3s);
-            if (t.data === 'VSL - 60 View')       ping(e.view60s);
-            if (t.data === 'VSL - 120 View')      ping(e.view120s);
-            if (t.data === 'VSL - 300 View')      ping(e.view300s);
-            if (t.data === 'VSL - Pitch View') {
-              localStorage.setItem('pitchView', 'true');
-              ping(e.pitchView);
-              displayOnPitch();
-            }
-          });
-        } else {
-          console.log('Missing clickid');
-        }
-    
-        /* funções do timer / pitch (inalteradas) */
-        function startOfferTimer() { /* ... */ }
-        function displayOnPitch() { /* ... */ }
-      </script>
+(function () {
+  const SUB_KEYS = ['subid', 'subid2', 'subid3', 'subid4', 'subid5'];
+
+  /* 1 ▸ captura subIDs da URL na primeira visita e salva */
+  (function saveFromQuery () {
+    const params = new URLSearchParams(location.search);
+    SUB_KEYS.forEach(k => {
+      if (params.has(k) && params.get(k)) {
+        localStorage.setItem(k, params.get(k));
+      }
+    });
+  })();
+
+  /* 2 ▸ helper para recuperar os subIDs salvos como objeto */
+  function getSavedSubIds () {
+    return SUB_KEYS.reduce((acc, k) => {
+      const v = localStorage.getItem(k);
+      if (v) acc[k] = v;
+      return acc;
+    }, {});
+  }
+
+  /* 3 ▸ helper: devolve nova URL com os subIDs anexados           */
+  /*    ‑ aceita string ou objeto URL; devolve string URL final.   */
+  window.appendSubIds = function (inputUrl) {
+    const url = new URL(inputUrl, location.origin);
+    const subs = getSavedSubIds();
+    Object.entries(subs).forEach(([k, v]) => {
+      if (!url.searchParams.has(k)) url.searchParams.set(k, v);
+    });
+    return url.toString();
+  };
+
+  /* 4 ▸ (opcional) exemplo de uso automático em todos <a> internos */
+  /*    ‑ se não quiser, pode remover este bloco.                  */
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    /* só altera links dentro do seu domínio */
+    const u = new URL(a.href, location.origin);
+    if (u.origin !== location.origin) return;
+    a.href = appendSubIds(a.href);
+  }, true);
+
+})();
+</script>
 
   </body>
 </html>
