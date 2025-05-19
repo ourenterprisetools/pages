@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advertorial Page</title>
+
+    <!-- Font & Icons -->
+    <link
+      rel="stylesheet"
+      href="css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="assets/oficial.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <style>
+      :root {
+        --brand: #1d4ed8;
+        --accent: #2563eb;
+        --bg: #f0f9ff;
+        --text: #111827;
+      }
+
+      /* --- LAYOUT --- */
+      body {
+        display: flex; /* empilha hero + footer */
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Roboto", sans-serif;
+      }
+      main.hero {
+        flex: 1; /* ocupa toda a viewport */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      /* --- CONTEÚDO PRINCIPAL --- */
+      .headline b {
+        color: var(--brand);
+      }
+      .watch-button {
+        margin-top: 2rem;
+        background: var(--brand);
+        color: #fff;
+        padding: 1rem 2.5rem;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .watch-button:hover {
+        background: var(--accent);
+      }
+
+      /* Esconde qualquer outro texto dentro da .hero (por ex. .subtext) */
+      .hero .subtext,
+      .hero .checks {
+        display: none;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        text-align: center;
+        padding: 2rem 1rem 3rem;
+      }
+      footer nav a {
+        margin: 0 0.5rem;
+        text-decoration: none;
+        color: var(--brand);
+        font-weight: 500;
+      }
+      footer p {
+        max-width: 720px;
+        margin: 1rem auto;
+        font-size: 0.87rem;
+        line-height: 1.4;
+      }
+
+      /* Pequeno ajuste para telas muito estreitas */
+      @media (max-width: 360px) {
+        .watch-button {
+          width: 100%;
+          padding: 1rem 0;
+        }
+      }
+    </style>
+
+    <!-- TRACKING SCRIPT (inalterado) -->
+    <script>
+      function getURLParameters() {
+        const p = {},
+          q = window.location.search.substring(1).split("&");
+        q.forEach((s) => {
+          const [k, v] = s.split("=");
+          if (k) p[decodeURIComponent(k)] = decodeURIComponent(v);
+        });
+        return p;
+      }
+      function appendParamsToLinks() {
+        const p = getURLParameters();
+        document.querySelectorAll("a[href]").forEach((a) => {
+          const u = new URL(a.href);
+          for (const k in p) {
+            u.searchParams.set(k, p[k]);
+          }
+          a.href = u.toString();
+        });
+      }
+      window.onload = appendParamsToLinks;
+    </script>
+  </head>
+
+  <body>
+    <!-- HERO SECTION -->
+    <main class="hero" id="container">
+      <h1 class="headline">
+        A Simple Morning <b>“CINNAMON TONIC”</b><br />
+        Balanced My High Blood Sugar
+      </h1>
+
+      <a href="https://pg.thehealth-now.site/pg" class="watch-button">
+        Watch the Video
+      </a>
+    </main>
+
+    <!-- FOOTER (abaixo da dobra) -->
+    <footer>
+      <nav>
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Medical Disclaimer</a>
+        <a href="refund.html">Refund Policy</a>
+      </nav>
+
+      <p>
+        <strong>Medical Disclaimer:</strong> This product is a natural dietary
+        supplement, not a medication. These statements have not been evaluated
+        by the U.S. Food & Drug Administration (FDA). This product is not
+        intended to diagnose, treat, cure, or prevent any disease. Information
+        on this site is for educational purposes only and should not replace
+        professional medical advice. Always consult a licensed healthcare
+        provider before use. Individual results may vary.
+      </p>
+
+      <p>
+        <strong>Marketing & Advertising Disclaimer:</strong> This page is a paid
+        advertisement. Product descriptions are provided by the advertiser.
+        Results are not guaranteed and may vary. Images may depict models and
+        are used for illustrative purposes only.
+      </p>
+
+      <p>
+        <strong>Affiliate Disclosure:</strong> Links on this site may be
+        affiliate links. If you purchase through them, we may earn a commission
+        at no additional cost to you.
+      </p>
+    </footer>
+  </body>
+</html>
