@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="assets/images/oficial.png" type="image/png" />
+
+    <!-- TikTok Pixel Code Start -->
+
+    <!-- TikTok Pixel Code End -->
+
+    <link rel="preload" href="https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/ab-test/67fa5edf7066994f5aca03b4/player.js" as="script">
+    <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+    <link rel="dns-prefetch" href="https://cdn.converteai.net">
+    <link rel="dns-prefetch" href="https://scripts.converteai.net">
+    <link rel="dns-prefetch" href="https://images.converteai.net">
+    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+    
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        color: #111;
+        margin: 0;
+        padding: 0;
+      }
+      .header-bar {
+        background: #b20000;
+        color: #fff;
+        text-align: center;
+        padding: 18px 0;
+        font-size: 1.4rem;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+      .headline {
+        text-align: center;
+        max-width: 700px;
+        margin: 2rem auto;
+      }
+      .headline h1 {
+        font-size: 1.4rem;
+      }
+      .headline strong {
+        color: red;
+      }
+      
+      .trusted-logos {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+      .comments-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      footer {
+        background: #111;
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem;
+        font-size: 0.8rem;
+      }
+    </style>
+
+    <style>
+      .breaking-news-bar {
+        background-color: #850505;
+        color: white;
+        overflow: hidden;
+        position: relative;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+      }
+
+      .breaking-news-text {
+        white-space: nowrap;
+        display: inline-block;
+        padding-left: 100%;
+        animation: scroll-left 58s linear infinite;
+      }
+
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-bar">HEALTH NEWS</div>
+    <div class="breaking-news-bar">
+      <div class="breaking-news-text">
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+        <span>BREAKING NEWS: Daily updates on wellness and health -</span>
+      </div>
+    </div>
+
+    <div class="headline">
+      <h1>
+        ​​​D​​​о​​​с​​​t​​​о​​​r​ ​​​R​​​е​​​v​​​е​​​а​​​l​​​ѕ​ ​​
+        <br>
+       "​​​Ѕ​​​t​​​r​​​а​​​n​​​g​​​е​ ​​​R​​​і​​​t​​​u​​​а​​​l​"​​​ ​​​t​​​h​​​а​​​t​​​ <strong>​​​R​​​Е​​​V​​​Е​​​R​​​Ѕ​​​Е​​​Ѕ​​​</strong> ​​
+       ​<br>
+       ​t​​​у​​​р​​​е​​​ ​​​2​​​ ​​​d​​​і​​​а​​​b​​​е​​​t​​​е​​​ѕ
+      </h1>
+      <p style="font-size: 15px; justify-content: left; align-items: start">
+        <div style="text-align: center; margin-top: 1rem;">
+            <strong>By Doctor Yumi </strong><br />
+        </div>
+      </p>
+    </div>
+
+<script type="text/javascript" id="scr_68200d9065dc0f433d443f33"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/dc2bee22-f6b3-41ae-b28c-3a61aaac8be4/ab-test/68200d9065dc0f433d443f33/player.js", s.async=!0,document.head.appendChild(s); </script>
+
+  <!-- ▸ ELEMENTO DO ESTOQUE -->
+<div id="stock-counter"
+     style="display:none; font-family:Arial,sans-serif;
+            font-weight:bold; text-align:center; margin:.8rem 0 1.3rem;
+            font-size:1.1rem;">
+</div>
+
+<!-- ▸ SCRIPT -->
+<script>
+(function () {
+  const INITIAL = 152;              // início
+  const FINAL   = 15;               // destino
+  const REST_MS = 600_000;          // 10 min = 600 000 ms
+  const TICK_MS = 5_000;            // atualiza a cada 5 s
+  const OPTIONS = [6, 3, 1];        // tamanhos de queda
+
+  const K_LEFT     = 'stockLeft';
+  const K_RUNNING  = 'stockCounterRunning';
+  const K_DEADLINE = 'stockCounterDeadline';
+
+  /* util */
+  const $ = id => document.getElementById(id);
+
+  /* calcula estoque atual */
+  function getStock () {
+    const n = parseInt(localStorage.getItem(K_LEFT), 10);
+    return isNaN(n) ? INITIAL : n;
+  }
+
+  /* renderiza */
+  function render (n) {
+    const el = $('stock-counter');
+    if (!el) return;
+    el.style.display = 'block';
+    el.innerHTML =
+      `<span style="color:#b20000;">${n}</span> bottles available…`;
+  }
+
+  /* função global chamada após o pitch */
+  window.startStockCounter = function () {
+    if (localStorage.getItem(K_RUNNING)) return;        // já iniciou
+
+    let stock = getStock();
+    /* define deadline de término se não existir */
+    let deadline = parseInt(localStorage.getItem(K_DEADLINE), 10);
+    if (isNaN(deadline)) {
+      deadline = Date.now() + REST_MS;
+      localStorage.setItem(K_DEADLINE, deadline);
+    }
+
+    render(stock);
+
+    const int = setInterval(() => {
+      const now = Date.now();
+      const remainingTicks = Math.max(1, Math.ceil((deadline - now) / TICK_MS));
+      const dropsLeft      = stock - FINAL;
+
+      /* se já chegou ou passou do final, encerra */
+      if (dropsLeft <= 0 || remainingTicks <= 0) {
+        clearInterval(int);
+        stock = FINAL;
+        render(stock);
+        return;
+      }
+
+      /* escolhe passo permitido que não “fure” o mínimo */
+      const maxCanDrop = dropsLeft - (remainingTicks - 1) * 1; // preciso deixar ≥1 p/ cada tick restante
+      const choices = OPTIONS.filter(v => v <= maxCanDrop);
+      const step    = choices[Math.floor(Math.random() * choices.length)];
+
+      stock -= step;
+      localStorage.setItem(K_LEFT, stock);
+      render(stock);
+    }, TICK_MS);
+
+    localStorage.setItem(K_RUNNING, '1');
+  };
+
+  /* se já viu o pitch em visita anterior, ativa imediatamente */
+  if (localStorage.getItem('pitchView') === 'true') {
+    startStockCounter();
+  }
+})();
+</script>
+    
+    <div class="trusted-logos">
+      <img src="assets/images/logo_news.webp" height="50" alt="Logo News" />
+    </div>
+
+    <!-- ========== BLOCO INSERIDO DE REFERÊNCIAS ========== -->
+    <section
+      id="references"
+      style="
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9em;
+        text-align: center;
+        margin: 0 auto;
+        padding: 2rem 0;
+      "
+    >
+      <div class="container" style="max-width: 1100px; margin: 0 auto">
+        <h2 style="margin-bottom: 1.5rem">Scientific References</h2>
+        <div
+          class="refs-list"
+          style="
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            opacity: 0.75;
+            line-height: 1.6;
+          "
+        >
+          <!-- Primeiro bloco -->
+          <div class="col-md" style="flex: 1; text-align: left; font-size: smaller;">
+            <ol>
+              <li>
+                "The Diabetes Control and Complications Trial …"
+                <span>DCCT 1993</span>
+              </li>
+              <li>
+                "Antidiabetic Properties of Grape Seed Extract …"
+                <span>J Nutr 2005</span>
+              </li>
+              <li>
+                "The Role of Gut Microbiota in Diabetes and Obesity"
+                <span>Nature 2012</span>
+              </li>
+              <li>
+                "Green Tea Catechins and Blood Glucose" <span>AJCN 2005</span>
+              </li>
+              <li>
+                "Gymnema sylvestre and Glucose Control"
+                <span>J Ethnopharm 1990</span>
+              </li>
+              <li>
+                "Bitter Melon and Blood Glucose"
+                <span>J Alt Comp Med 2008</span>
+              </li>
+              <li>
+                "Insulin Therapy Intensification in T2D" <span>ADA 2015</span>
+              </li>
+              <li>
+                "Astragalus in Insulin Resistance"
+                <span>Phytother Res 2012</span>
+              </li>
+              <li>
+                "Chromium Picolinate in Blood Sugar" <span>Diabetes 1997</span>
+              </li>
+              <li>
+                "Cinnamon Extract in Glucose Regulation"
+                <span>Diabetes Care 2003</span>
+              </li>
+            </ol>
+          </div>
+          <!-- Segundo bloco -->
+          <div class="col-md" style="flex: 1; text-align: left; font-size: smaller;">
+            <ol start="11">
+              <li>
+                "Look AHEAD Study: Lifestyle Intervention"
+                <span>Diabetes Care 2014</span>
+              </li>
+              <li>
+                "Capsaicin’s Role in Blood Sugar Control"
+                <span>J Agr Food Chem 2007</span>
+              </li>
+              <li>
+                "Beta‑Alanine and Insulin Sensitivity"
+                <span>J Appl Physiol 2007</span>
+              </li>
+              <li>
+                "Role of GABA in Glucose Homeostasis"
+                <span>Endocr Rev 2008</span>
+              </li>
+              <li>
+                "L‑Tryptophan and Insulin Regulation"
+                <span>Psychosom Med 2005</span>
+              </li>
+              <li>
+                "Maca Root and Glucose Homeostasis"
+                <span>Diab Res Clin Pract 2006</span>
+              </li>
+              <li>
+                "Eleuthero and Blood Glucose" <span>Fitoterapia 2004</span>
+              </li>
+              <li>
+                "L‑Arginine’s Impact on Glucose Tolerance"
+                <span>JCEM 2006</span>
+              </li>
+              <li>
+                "Intensive Blood‑Glucose Control in T2D"
+                <span>Lancet 1998</span>
+              </li>
+              <li>
+                "Panax Ginseng and Insulin Sensitivity"
+                <span>Diabetes Care 2002</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024. All rights reserved.</p>
+      <p>
+        This site is not part of TikTok, Inc. or TikTok.com, nor is it sponsored
+        or endorsed by TikTok.<br />TikTok is a trademark of ByteDance, Ltd.
+      </p>
+      <p>
+        Disclaimer: This site is provided for educational purposes only. Always
+        consult a health professional before implementing any strategy discussed
+        here.
+      </p>
+    </footer>
+
+
+    <!-- ========== REDTRACK SCRIPT ========== -->
+    
+    
+    
+    <!-- ========== REDTRACK SCRIPT ========== -->
+    
+   <!-- ====== TRACKING – RedTrack (cookie)  x  ConverteAI ====== -->
+<script>
+(function () {
+  /* ─── Utilidades ────────────────────────────────────────── */
+  function getCookie(name) {
+    const m = ('; ' + document.cookie).match('; ' + name + '=([^;]*)');
+    return m ? m[1] : null;
+  }
+  const newEventId = () => Date.now().toString();
+
+  /* ─── Dispara o postback ───────────────────────────────── */
+  function track(type) {
+    const clickId = getCookie('rtkclickid-store');
+    if (!clickId) {
+      console.warn(`RedTrack: cookie ausente – evento “${type}” NÃO enviado.`);
+      return;
+    }
+
+    /* ★ Envia “VSL View” só 1x por clickID ----------------- */
+    if (type === 'VSL View') {
+      const key = 'vslView:' + clickId;
+      if (localStorage.getItem(key)) {
+        console.log('RedTrack: “VSL View” já enviado para esse clickid.');
+        return;
+      }
+      localStorage.setItem(key, '1');   // marca que já enviou
+    }
+    /* ------------------------------------------------------ */
+
+    const url =
+      'https://track.onebetter-life.site/postback' +
+      '?clickid='       + encodeURIComponent(clickId) +
+      '&rdtk_event_id=' + encodeURIComponent(newEventId()) +
+      '&type='          + encodeURIComponent(type);
+
+    new Image().src = url;
+    console.log('RedTrack: enviado →', type);
+  }
+
+  /* ─── Timer + UI do Pitch (inalterado) ─────────────────── */
+  function startOfferTimer() {
+    const els = document.querySelectorAll('.offer-timer-count');
+    if (!els.length) return;
+
+    let s = 1800;
+    const int = setInterval(() => {
+      const mm = String(Math.floor(s / 60)).padStart(2, '0');
+      const ss = String(s % 60).padStart(2, '0');
+
+      els.forEach(el => (el.innerHTML = `<h1>${mm}:${ss}</h1>`));
+      document.querySelectorAll('.offer-timer-count h1')
+        .forEach(h1 => (h1.textContent = `Oferta expira em ${mm}:${ss}`));
+
+      if (--s < 0) clearInterval(int);
+    }, 1000);
+  }
+
+  function displayOnPitch() {
+    startOfferTimer();
+    document.querySelectorAll('.display-on-pitch')
+            .forEach(el => el.classList.remove('display-on-pitch'));
+    document.querySelector('.scroll-on-pitch')
+            ?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* ─── VSL View: polling até 5 s pelo cookie ────────────── */
+  window.addEventListener('DOMContentLoaded', () => {
+    let tries = 0;
+    const int = setInterval(() => {
+      if (getCookie('rtkclickid-store')) {
+        track('VSL View');
+        clearInterval(int);
+      } else if (++tries >= 17) {
+        clearInterval(int);
+        console.warn('VSL View não disparado: cookie não apareceu em 5 s.');
+      }
+    }, 300);
+
+    if (localStorage.getItem('pitchView') === 'true') {
+      displayOnPitch();
+    }
+  });
+
+  /* ─── Mensagens do SmartPlayer ─────────────────────────── */
+  window.addEventListener('message', ev => {
+    switch (ev.data) {
+      /* REMOVIDO: 'VSL View' duplicado */
+
+      case 'VSL - Lead View' : track('VSL - Lead View');         break;
+      case 'VSL - MicroLead View' : track('VSL - MicroLead View');   break;
+      case 'VSL - Play':
+        track('VSL - Play');
+        document.querySelectorAll('.hide-on-play')
+                .forEach(el => (el.style.display = 'none'));
+        break;
+
+      case 'VSL - 3 View'    : track('VSL - 3 View');            break;
+      case 'VSL - 60 View'   : track('VSL - 60 View');           break;
+      case 'VSL - 120 View'  : track('VSL - 120 View');          break;
+      case 'VSL - 300 View'  : track('VSL - 300 View');          break;
+
+      case 'VSL - Pitch View':
+        localStorage.setItem('pitchView', 'true');
+        track('VSL - Pitch View');
+        displayOnPitch();
+        break;
+    }
+  });
+})();
+</script>
+<!-- ====== /TRACKING ======================================================= -->
+
+
+<!-- BACK-REDIRECT clássico (sem alterações) -->
+<script>
+(function (window) {
+  function getCookie (name) {
+    const m = ('; '+document.cookie).match('; '+name+'=([^;]*)');
+    return m ? m[1] : null;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const cmpId = getCookie('rtkcmpid-store');
+    if (cmpId) localStorage.setItem('sourceCmp', cmpId);
+  });
+
+  window.onpopstate = function () {
+    if (sessionStorage.backRedirectDone) return;
+    sessionStorage.backRedirectDone = '1';
+
+    const url  = new URL('https://sugarsweeptoday.com/dtc-v3/');
+    url.searchParams.set('aff_id',       '6291');
+    url.searchParams.set('utm_campaign', '{replace}');
+    url.searchParams.set('utm_source',   'TikTok');
+
+    const clickId = getCookie('rtkclickid-store');
+    const srcCmp  = localStorage.getItem('sourceCmp');
+
+    if (clickId) {
+      url.searchParams.set('subid',   clickId);
+      url.searchParams.set('rtkcid',  clickId);
+      url.searchParams.set('clickid', clickId);
+    }
+    if (srcCmp) url.searchParams.set('subid5', srcCmp);
+
+    window.location.href = url.toString();
+  };
+
+  history.pushState({}, '', location.href);
+})(window);
+</script>
+
+    
+  </body>
+</html>
