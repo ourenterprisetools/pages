@@ -12,9 +12,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet"   type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-
   </head>
   <body>
     <!-- Header Section -->
@@ -54,11 +53,135 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="hero-image">
-              <img
-                src="/placeholder.svg?height=500&width=400"
-                alt="Weight Loss Transformation"
-                class="img-fluid"
+              <div
+                id="productCarousel"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <!-- Carousel indicators -->
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#productCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#productCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#productCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#productCarousel"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"
+                  ></button>
+                </div>
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="images/potes1.png"
+                      class="d-block w-100"
+                      alt="Sugar Sweep Product"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/potes2.png"
+                      class="d-block w-100"
+                      alt="Sugar Sweep Product Variation"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/potes3.png"
+                      class="d-block w-100"
+                      alt="Sugar Sweep Benefits"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="images/potes4.png"
+                      class="d-block w-100"
+                      alt="Sugar Sweep Benefits"
+                    />
+                  </div>
+                </div>
+
+                <!-- Carousel controls -->
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#productCarousel"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#productCarousel"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              
+              <!-- Thumbnail navigation -->
+              <div class="carousel-thumbnails mt-2 d-flex justify-content-center">
+                <img 
+                  src="images/potes1.png" 
+                  class="thumbnail active me-2" 
+                  alt="Thumbnail 1" 
+                  data-bs-target="#productCarousel" 
+                  data-bs-slide-to="0" 
+                  style="width: 60px; height: auto; cursor: pointer; border: 2px solid transparent;"
+                />
+                <img 
+                  src="images/potes2.png" 
+                  class="thumbnail me-2" 
+                  alt="Thumbnail 2" 
+                  data-bs-target="#productCarousel" 
+                  data-bs-slide-to="1" 
+                  style="width: 60px; height: auto; cursor: pointer; border: 2px solid transparent;"
+                />
+                <img 
+                  src="images/potes3.png" 
+                  class="thumbnail" 
+                  alt="Thumbnail 3" 
+                  data-bs-target="#productCarousel" 
+                  data-bs-slide-to="2" 
+                  style="width: 60px; height: auto; cursor: pointer; border: 2px solid transparent;"
+                />
+                <img 
+                src="images/potes4.png" 
+                class="thumbnail" 
+                alt="Thumbnail 4" 
+                data-bs-target="#productCarousel" 
+                data-bs-slide-to="2" 
+                style="width: 60px; height: auto; cursor: pointer; border: 2px solid transparent;"
               />
+            </div>
             </div>
           </div>
           <div class="col-lg-6">
@@ -66,7 +189,7 @@
               <h1 class="hero-title">
                 Take Control of Your Blood Sugar Naturally with Sugar Sweep!
               </h1>
-              <p class="hero-subtitle">
+              <p class="hero-subtitle"></p>
                 Discover how over 500,000 people with type 2 diabetes have
                 naturally supported healthy blood sugar levels and improved
                 insulin sensitivity—without harsh medications, restrictive
@@ -110,243 +233,228 @@
       </div>
     </section>
 
-    <!-- Free Gifts Section -->
-    <section class="free-gifts-section">
-      <div class="container">
-        <h2 class="section-title text-center">
-          FREE GIFTS! When You Purchase 3 Or 6-Pack
-        </h2>
-        <div class="row justify-content-center">
-          <div class="col-md-3">
-            <div class="gift-card">
-              <div class="gift-icon">
-                <i class="fas fa-shipping-fast"></i>
-              </div>
-              <h4>Free Shipping</h4>
-              <p class="gift-value">For 3 or 6-Pack</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="gift-card">
-              <div class="gift-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <h4>Wellness Coaching Call</h4>
-              <p class="gift-value">$300 Value</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="gift-card">
-              <div class="gift-icon">
-                <i class="fas fa-book"></i>
-              </div>
-              <h4>Best-Selling Ebook</h4>
-              <p class="gift-value">$29.99 Value</p>
-            </div>
-          </div>
-        </div>
-        <div class="stock-warning text-center">
-          <i class="fas fa-exclamation-triangle"></i>
-          <span>Hurry! Stock is running low due to high demand</span>
-          <div class="stock-meter mt-3">
-            <div class="progress" style="height: 8px; max-width: 300px; margin: 0 auto;">
-              <div class="progress-bar bg-danger" role="progressbar" style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div class="d-flex justify-content-between" style="max-width: 300px; margin: 0 auto; font-size: 12px;">
-              <span>Running Out</span>
-              <span>In Stock</span>
-            </div>
-          </div>
-        </div></div>
-      </div>
-    </section>
-
     <!-- Pricing Section -->
     <section class="pricing-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="pricing-card best-value">
-              <div class="badge">Best Value</div>
-              <h3>6-PACK</h3>
-              <p class="supply-text">180 DAY SUPPLY</p>
-              <div class="perks">
-                <span class="perk">FREE SHIPPING</span>
-                <span class="perk">FREE GIFT</span>
-              </div>
-              <div class="price">
-                <span class="price-amount">$49</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-primary claim-btn">CLAIM NOW →</button>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="pricing-card best-value">
+                        <div class="badge">Best Value</div>
+                        <h3>6-PACK</h3>
+                        <p class="supply-text">180 DAY SUPPLY</p>
+                        <div class="product-image text-center mb-3">
+                            <img src="images/img-6-bottles.png" alt="Sugar Sweep 6-Pack" class="img-fluid" style="max-height: 150px;">
+                        </div>
+                        <div class="perks">
+                            <span class="perk">FREE SHIPPING</span>
+                            <span class="perk">FREE GIFT</span>
+                        </div>
+                        <div class="price">
+                            <span class="price-amount">$49</span>
+                            <span class="price-unit">/bottle</span>
+                        </div>
+                        <button class="btn btn-primary claim-btn" onclick="window.location.href='https://sugarsweeptoday.com/dtc-v3/?aff_id=6287'">SELECT YOUR DISCOUNT PACKAGE →</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="pricing-card most-popular">
+                        <div class="badge">Most Popular</div>
+                        <h3>3-PACK</h3>
+                        <p class="supply-text">90 DAY SUPPLY</p>
+                        <div class="product-image text-center mb-3">
+                            <img src="images/img-3-bottles.png" alt="Sugar Sweep 3-Pack" class="img-fluid" style="max-height: 150px;">
+                        </div>
+                        <div class="perks">
+                            <span class="perk">FREE SHIPPING</span>
+                            <span class="perk">FREE GIFT</span>
+                        </div>
+                        <div class="price">
+                            <span class="price-amount">$59</span>
+                            <span class="price-unit">/bottle</span>
+                        </div>
+                        <button class="btn btn-primary claim-btn" onclick="window.location.href='https://sugarsweeptoday.com/dtc-v3/?aff_id=6287'">SELECT YOUR DISCOUNT PACKAGE →</button>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="pricing-card">
+                        <h3>1-PACK</h3>
+                        <p class="supply-text">30 DAY SUPPLY</p>
+                        <div class="product-image text-center mb-3">
+                            <img src="images/img-2-bottles.png" alt="Sugar Sweep 1-Pack" class="img-fluid" style="max-height: 150px;">
+                        </div>
+                        <div class="perks">
+                            <span class="perk shipping-cost">+ SHIPPING</span>
+                        </div>
+                        <div class="price">
+                            <span class="price-amount">$89</span>
+                            <span class="price-unit">/bottle</span>
+                        </div>
+                        <button class="btn btn-primary claim-btn " onclick="window.location.href='https://sugarsweeptoday.com/dtc-v3/?aff_id=6287'" >SELECT YOUR DISCOUNT PACKAGE →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stock-warning text-center">
+      <i class="fas fa-exclamation-triangle"></i>
+      <span>Hurry! Stock is running low due to high demand</span>
+      <div class="stock-meter mt-3">
+        <div
+          class="progress"
+          style="height: 8px; max-width: 300px; margin: 0 auto"
+        >
+          <div
+            class="progress-bar bg-danger"
+            role="progressbar"
+            style="width: 15%"
+            aria-valuenow="15"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <div
+          class="d-flex justify-content-between"
+          style="max-width: 300px; margin: 0 auto; font-size: 12px"
+        >
+          <span>Running Out</span>
+          <span>In Stock</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="guarantee" class="pb-5 py-md-5">
+      <div class="container text-center text-white">
+        <div
+          class="px-3 py-4 p-md-5 rounded-5 shadow"
+          style="
+            background-image: linear-gradient(
+              45deg,
+              var(--primary-color),
+              var(--primary-color-light)
+            );
+          "
+        >
+          <h2 class="fs-0 fw-bold mb-0">
+            100% Satisfaction or Your Money Back
+          </h2>
+          <h3 class="fs-1 fw-bold mb-4" style="color: #ffd74a">
+            180-Day Guarantee
+          </h3>
+          <div class="row align-items-center mb-4">
+            <div class="col-12 col-md-3">
+              <img
+                src="images/guarantee-seal.png"
+                alt="img"
+                class="img-fluid"
+                style="max-width: 200px"
+              />
+            </div>
+            <div class="col-12 col-md-9 text-start" style="font-size: 17px">
+              <p>
+                We're so sure you'll experience remarkable results that we back
+                Sugar Sweep with a 100% satisfaction guarantee for 180 days.
+                Within days of starting, you may notice improved energy levels,
+                enhanced mental clarity, and better overall well-being. Many
+                users report reduced sugar cravings and easier weight
+                management. If after several weeks or even months you're not
+                satisfied, we'll refund your money entirely. You're in control
+                of your health this time.
+              </p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="pricing-card most-popular">
-              <div class="badge">Most Popular</div>
-              <h3>3-PACK</h3>
-              <p class="supply-text">90 DAY SUPPLY</p>
-              <div class="perks">
-                <span class="perk">FREE SHIPPING</span>
-                <span class="perk">FREE GIFT</span>
-              </div>
-              <div class="price">
-                <span class="price-amount">$59</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-primary claim-btn">CLAIM NOW →</button>
-            </div>
+          <div
+            class="d-none d-sm-flex flex-sm-nowrap gap-4 align-items-center justify-content-center"
+          >
+            <figure>
+              <img
+                src="images/gmp.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 120px"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/fda.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 120px"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/nat.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 120px"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/usa.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 120px"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/gmo.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 120px"
+              />
+            </figure>
           </div>
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="pricing-card">
-              <h3>1-PACK</h3>
-              <p class="supply-text">30 DAY SUPPLY</p>
-              <div class="perks">
-                <span class="perk shipping-cost">$19.99 SHIPPING</span>
-              </div>
-              <div class="price">
-                <span class="price-amount">$84</span>
-                <span class="price-unit">/bottle</span>
-              </div>
-              <button class="btn btn-primary claim-btn">CLAIM NOW →</button>
-            </div>
+          <div
+            class="d-flex d-sm-none flex-wrap flex-sm-nowrap gap-2 align-items-center justify-content-center"
+          >
+            <figure>
+              <img
+                src="images/gmp.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 60px"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/fda.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 60px"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/nat.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 60px"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/usa.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 60px"
+              />
+            </figure>
+            <figure>
+              <img
+                src="images/gmo.png"
+                alt="Badge"
+                class="rounded-circle bg-white border border-white"
+                style="max-width: 60px"
+              />
+            </figure>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="guarantee" class="pb-5 py-md-5">
-        <div class="container text-center text-white">
-          <div
-            class="px-3 py-4 p-md-5 rounded-5 shadow"
-            style="
-              background-image: linear-gradient(
-                45deg,
-                var(--primary-color),
-                var(--primary-color-light)
-              );
-            "
-          >
-            <h2 class="fs-0 fw-bold mb-0">
-              100% Satisfaction or Your Money Back
-            </h2>
-            <h3 class="fs-1 fw-bold mb-4" style="color: #ffd74a">
-              180-Day Guarantee
-            </h3>
-            <div class="row align-items-center mb-4">
-              <div class="col-12 col-md-3">
-                <img
-                  src="images/guarantee-seal.png"
-                  alt="img"
-                  class="img-fluid"
-                  style="max-width: 200px"
-                />
-              </div>
-              <div class="col-12 col-md-9 text-start" style="font-size: 17px">
-                <p>
-                  We're so sure you'll experience remarkable results that we back
-                  Sugar Sweep with a 100% satisfaction guarantee for 180 days.
-                  Within days of starting, you may notice improved energy levels,
-                  enhanced mental clarity, and better overall well-being. Many
-                  users report reduced sugar cravings and easier weight
-                  management. If after several weeks or even months you're not
-                  satisfied, we'll refund your money entirely. You're in control
-                  of your health this time.
-                </p>
-              </div>
-            </div>
-            <div
-              class="d-none d-sm-flex flex-sm-nowrap gap-4 align-items-center justify-content-center"
-            >
-              <figure>
-                <img
-                  src="images/gmp.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 120px"
-                />
-              </figure>
-              <figure>
-                <img
-                  src="images/fda.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 120px"
-                />
-              </figure>
-              <figure>
-                <img
-                  src="images/nat.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 120px"
-                />
-              </figure>
-              <figure>
-                <img
-                  src="images/usa.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 120px"
-                />
-              </figure>
-              <figure>
-                <img
-                  src="images/gmo.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 120px"
-                />
-              </figure>
-            </div>
-            <div
-              class="d-flex d-sm-none flex-wrap flex-sm-nowrap gap-2 align-items-center justify-content-center"
-            >
-              <figure>
-                <img
-                  src="images/gmp.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 60px"
-                />
-              </figure>
-              <figure>
-                <img
-                  src="images/fda.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 60px"
-                />
-              </figure>
-              <figure>
-                <img
-                  src="images/nat.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 60px"
-                />
-              </figure>
-              <figure>
-                <img
-                  src="images/usa.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 60px"
-                />
-              </figure>
-              <figure>
-                <img
-                  src="images/gmo.png"
-                  alt="Badge"
-                  class="rounded-circle bg-white border border-white"
-                  style="max-width: 60px"
-                />
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-  
 
     <!-- Expert Section -->
     <section class="expert-section">
@@ -355,7 +463,7 @@
           <div class="col-lg-4">
             <div class="expert-image">
               <img
-                src="/placeholder.svg?height=400&width=300"
+                src="images/dra.jpg"
                 alt="Dr. Sarah Gottfried"
                 class="img-fluid"
               />
@@ -476,7 +584,7 @@
           <div class="col-lg-6">
             <div class="product-image">
               <img
-                src="/placeholder.svg?height=400&width=300"
+                src="images/provasocial/provasocial1.png"
                 alt="Burnjaro Product"
                 class="img-fluid"
               />
@@ -512,7 +620,6 @@
                 </p>
               </div>
             </div>
-
             <div class="work-step">
               <div class="step-number">3</div>
               <div class="step-content">
@@ -522,48 +629,6 @@
                   from meals, preventing dangerous blood sugar spikes.
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="hidden-cause-content">
-              <h3>
-                The Hidden Cause of Weight Gain: Slow Metabolism and Hormonal
-                Imbalance
-              </h3>
-              <p>
-                Did you know that one of the leading causes of type 2 diabetes
-                isn't just genetics or diet, but how your body processes and
-                responds to glucose? When insulin resistance develops, your
-                cells can't effectively use the glucose in your bloodstream,
-                leading to dangerously high blood sugar levels.
-              </p>
-              <p>
-                The mechanisms responsible for healthy glucose metabolism,
-                including proper insulin signaling and pancreatic function, can
-                become impaired over time. This leads to the progression of
-                prediabetes to type 2 diabetes, with symptoms like fatigue,
-                frequent urination, excessive thirst, and long-term
-                complications.
-              </p>
-              <p>
-                That's where Sugar Sweep comes in. By naturally supporting
-                insulin sensitivity and glucose metabolism, Sugar Sweep helps
-                restore your body's ability to maintain healthy blood sugar
-                levels, so you can manage your diabetes effectively—without
-                relying solely on harsh medications.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="metabolism-diagram">
-              <img
-                src="/placeholder.svg?height=400&width=400"
-                alt="Metabolism Diagram"
-                class="img-fluid"
-              />
             </div>
           </div>
         </div>
@@ -591,11 +656,11 @@
           <cite>- Jessica R., Verified Customer with Type 2 Diabetes</cite>
           <div class="cta-buttons text-center mt-4">
             <button class="btn btn-primary">Try Sugar Sweep Now →</button>
-        </div>
-        <div class="guarantee-text">
-          <i class="fas fa-shield-alt"></i>
-          <span>180-Day Money-Back Guarantee</span>
-        </div>
+          </div>
+          <div class="guarantee-text">
+            <i class="fas fa-shield-alt"></i>
+            <span>180-Day Money-Back Guarantee</span>
+          </div>
         </div>
       </div>
     </section>
@@ -609,7 +674,7 @@
             <div class="testimonial-card">
               <div class="customer-image">
                 <img
-                  src="/placeholder.svg?height=80&width=80"
+                  src="images/provasocial/provasocial1.png"
                   alt="Marianne T."
                   class="img-fluid rounded-circle"
                 />
@@ -634,7 +699,7 @@
             <div class="testimonial-card">
               <div class="customer-image">
                 <img
-                  src="/placeholder.svg?height=80&width=80"
+                  src="images/provasocial/provasocial2.png"
                   alt="Diana M."
                   class="img-fluid rounded-circle"
                 />
@@ -658,7 +723,7 @@
             <div class="testimonial-card">
               <div class="customer-image">
                 <img
-                  src="/placeholder.svg?height=80&width=80"
+                  src="images/provasocial/provasocial3.png"
                   alt="Patricia L."
                   class="img-fluid rounded-circle"
                 />
@@ -682,7 +747,7 @@
             <div class="testimonial-card">
               <div class="customer-image">
                 <img
-                  src="/placeholder.svg?height=80&width=80"
+                  src="images/provasocial/provasocial6.png"
                   alt="Susan R."
                   class="img-fluid rounded-circle"
                 />
@@ -706,7 +771,7 @@
             <div class="testimonial-card">
               <div class="customer-image">
                 <img
-                  src="/placeholder.svg?height=80&width=80"
+                  src="images/provasocial/provasocial4.png"
                   alt="Elena F."
                   class="img-fluid rounded-circle"
                 />
@@ -730,7 +795,7 @@
             <div class="testimonial-card">
               <div class="customer-image">
                 <img
-                  src="/placeholder.svg?height=80&width=80"
+                  src="images/provasocial/provasocial5.png"
                   alt="Judy P."
                   class="img-fluid rounded-circle"
                 />
@@ -759,145 +824,150 @@
       <div class="container">
         <h2 class="section-title text-center">Frequently Asked Questions</h2>
         <div class="accordion" id="faqAccordion">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                    >
-                    What is Sugar Sweep?
-                    </button>
-                </h2>
-                <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#faqAccordion"
-                >
-                    <div class="accordion-body">
-                    Sugar Sweep is a natural dietary supplement designed to
-                    support healthy blood sugar levels and improve insulin
-                    sensitivity, using scientifically-backed ingredients.
-                    </div>
-                </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+                style="background-color: var(--primary-color); color: white"
+              >
+                What is Sugar Sweep?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Sugar Sweep is a natural dietary supplement designed to support
+                healthy blood sugar levels and improve insulin sensitivity,
+                using scientifically-backed ingredients.
+              </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                    >
-                    How does Sugar Sweep work?
-                    </button>
-                </h2>
-                <div
-                    id="collapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#faqAccordion"
-                >   
-                    <div class="accordion-body">
-                    Sugar Sweep works by improving insulin sensitivity, supporting
-                    pancreatic function, and reducing glucose absorption from
-                    meals, helping to maintain stable blood sugar levels.
-                    </div>
-                </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+                style="background-color: var(--primary-color); color: white"
+              >
+                How does Sugar Sweep work?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Sugar Sweep works by improving insulin sensitivity, supporting
+                pancreatic function, and reducing glucose absorption from meals,
+                helping to maintain stable blood sugar levels.
+              </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                    >
-                    Is Sugar Sweep safe to use?
-                    </button>
-                </h2>
-                <div
-                    id="collapseThree"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingThree"
-                    data-bs-parent="#faqAccordion"
-                >
-                    <div class="accordion-body">
-                    Yes, Sugar Sweep is made with 100% natural ingredients and is
-                    generally considered safe for most people. However, it's
-                    always best to consult with your healthcare provider before
-                    starting any new supplement, especially if you have existing
-                    health conditions or are taking medications.
-                    </div>
-                </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+                style="background-color: var(--primary-color); color: white"
+              >
+                Is Sugar Sweep safe to use?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Yes, Sugar Sweep is made with 100% natural ingredients and is
+                generally considered safe for most people. However, it's always
+                best to consult with your healthcare provider before starting
+                any new supplement, especially if you have existing health
+                conditions or are taking medications.
+              </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                    <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour"
-                    aria-expanded="false"
-                    aria-controls="collapseFour"
-                    >
-                    How long does it take to see results?
-                    </button>
-                </h2>
-                <div
-                    id="collapseFour"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingFour"
-                    data-bs-parent="#faqAccordion"
-                >
-                    <div class="accordion-body">
-                    Many users report noticeable improvements in their blood
-                    sugar levels and overall well-being within a few weeks of
-                    consistent use. However, individual results may vary based on
-                    factors like diet, lifestyle, and existing health conditions.
-                    </div>
-                </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+                style="background-color: var(--primary-color); color: white"
+              >
+                How long does it take to see results?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFour"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Many users report noticeable improvements in their blood sugar
+                levels and overall well-being within a few weeks of consistent
+                use. However, individual results may vary based on factors like
+                diet, lifestyle, and existing health conditions.
+              </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                    <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFive"
-                    aria-expanded="false"
-                    aria-controls="collapseFive"
-                    >
-                    What if I'm not satisfied with Sugar Sweep?
-                    </button>
-                </h2>
-                <div
-                    id="collapseFive"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingFive"
-                    data-bs-parent="#faqAccordion"
-                >
-                    <div class="accordion-body">
-                    Sugar Sweep comes with a 180-day money-back guarantee. If
-                    you're not satisfied with your results, you can return the
-                    product for a full refund, no questions asked.
-                    </div>
-                </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+                style="background-color: var(--primary-color); color: white"
+              >
+                What if I'm not satisfied with Sugar Sweep?
+              </button>
+            </h2>
+            <div
+              id="collapseFive"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFive"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Sugar Sweep comes with a 180-day money-back guarantee. If you're
+                not satisfied with your results, you can return the product for
+                a full refund, no questions asked.
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer-section ">
+    <footer class="footer-section">
       <div class="container">
         <div class="disclaimer">
           <p>
@@ -915,9 +985,11 @@
           </p>
           <p>
             <small
-              >CNPJ: 60.374.234/001-20 RAZAO SOCIAL: UNION EMPREENDIMENTOS
-              GLOBAIS LTDA. Contact info email:
-              intacademiasoporte@gmail.com</small
+              >CNPJ: 30.325.256/001-36 RAZAO SOCIAL: KAIZEN INTERNACIONAL DE
+              NEGOCIOS E TECNOLOGIA LTDA. Address: Rua Coronel Francisco José da
+              Cruz, 100, Sala 01, Centro, São José do Rio Pardo, SP, 13870-000,
+              Brazil. Phone: +55 19 9 9999-9999. Email: intacademias GLOBAIS
+              LTDA. Contact info email: kaizensuporte@gmail.com</small
             >
           </p>
         </div>
