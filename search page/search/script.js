@@ -1,3 +1,64 @@
+// Function to extract UTM parameters from URL
+function getUTMParameters() {
+  const params = {};
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  // Extract all parameters, focusing on UTM and affiliate IDs
+  for (const [key, value] of urlParams.entries()) {
+    // Capture UTM parameters and affiliate IDs
+    if (key.startsWith("utm_") || key === "aff_id" || key === "ref") {
+      params[key] = value;
+    }
+  }
+
+  return params;
+}
+
+// Function to add parameters to a URL
+function appendUTMToURL(url, params) {
+  // Skip if it's not a valid URL
+  if (!url || url.startsWith("#") || url.startsWith("javascript:")) {
+    return url;
+  }
+
+  try {
+    const urlObj = new URL(url, window.location.origin);
+
+    // Add each parameter to the URL
+    Object.keys(params).forEach((key) => {
+      urlObj.searchParams.set(key, params[key]);
+    });
+
+    return urlObj.href;
+  } catch (e) {
+    // If URL parsing fails, return original URL
+    return url;
+  }
+}
+
+// Update all links on the page with UTM parameters
+function updateAllLinks() {
+  const utmParams = getUTMParameters();
+
+  // Only proceed if we have parameters to add
+  if (Object.keys(utmParams).length === 0) {
+    return;
+  }
+
+  // Find all links on the page
+  const links = document.querySelectorAll("a");
+
+  links.forEach((link) => {
+    if (link.href) {
+      link.href = appendUTMToURL(link.href, utmParams);
+    }
+  });
+}
+
+// Run when the page loads
+document.addEventListener("DOMContentLoaded", updateAllLinks);
+
 // Countdown Timer
 function startCountdown() {
   // Set countdown to 2 hours from now
